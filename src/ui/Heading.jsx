@@ -9,7 +9,6 @@ const Heading = styled.h1`
     css`
       font-size: 40px;
       font-weight: 600;
-      background-color: yellow;
     `}
 
   ${(props) =>
@@ -17,7 +16,6 @@ const Heading = styled.h1`
     css`
       font-size: 20px;
       font-weight: 600;
-      background-color: #efefa3;
     `}
 
     ${(props) =>
@@ -25,7 +23,6 @@ const Heading = styled.h1`
     css`
       font-size: 15px;
       font-weight: 500;
-      background-color: #f7f7dc;
     `}
 
     line-height: 1.4;
