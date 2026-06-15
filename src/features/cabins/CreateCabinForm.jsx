@@ -25,7 +25,7 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
   const { errors } = formState;
 
   function onSubmit(data) {
-    const image = typeof data.image === 'string' ? data.image : data.image[0];
+    const image = typeof data.image === 'string' ? data.image : data.image?.[0];
 
     if (isEditSession)
       editCabin(
@@ -90,6 +90,7 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
           id='regularPrice'
           disabled={isWorking}
           {...register('regularPrice', {
+            valueAsNumber: true,
             required: 'This field is required',
             min: {
               value: 1,
@@ -106,7 +107,9 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
           disabled={isWorking}
           defaultValue={0}
           {...register('discount', {
+            valueAsNumber: true,
             required: 'This field is required',
+
             validate: (value) =>
               value <= getValues().regularPrice ||
               'Discount should be less than regular price',
@@ -119,7 +122,6 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
         error={errors?.description?.message}
       >
         <Textarea
-          type='number'
           id='description'
           defaultValue=''
           disabled={isWorking}
