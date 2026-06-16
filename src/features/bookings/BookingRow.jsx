@@ -84,3 +84,39 @@ function BookingRow({
 }
 
 export default BookingRow;
+
+// function BookingRow({ booking }) {
+//   const guestName = booking.guests?.fullName ?? 'Unknown guest';
+//   const email = booking.guests?.email ?? '—';
+
+//   const cabinName = booking.cabins?.name ?? 'Unknown cabin';
+
+//   return (
+//     <Table.Row>
+//       {cabinName}
+
+//       <Stacked>
+//         <span>{guestName}</span>
+//         <span>{email}</span>
+//       </Stacked>
+
+//       <Stacked>
+//         <span>
+//           {isToday(new Date(startDate))
+//             ? 'Today'
+//             : formatDistanceFromNow(startDate)}{' '}
+//           &rarr; {numNights} night stay
+//         </span>
+//         <span>
+//           {format(new Date(startDate), 'MMM dd yyyy')} &mdash;{' '}
+//           {format(new Date(endDate), 'MMM dd yyyy')}
+//         </span>
+//       </Stacked>
+
+//       <Tag type={statusToTagName[status]}>{status.replace('-', ' ')}</Tag>
+
+//       <Amount>{formatCurrency(totalPrice)}</Amount>
+//     </Table.Row>
+//   );
+// }
+// export default BookingRow;
