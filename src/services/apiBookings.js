@@ -1,5 +1,5 @@
 import { getToday } from '../utils/helpers';
-import { PAGE_SIZE } from '../utils/constance';
+import { PAGE_SIZE } from '../utils/constants';
 import supabase from './supabase';
 
 export async function getBookings({ filter, sortBy, page }) {
@@ -19,6 +19,7 @@ export async function getBookings({ filter, sortBy, page }) {
       ascending: sortBy.direction === 'asc',
     });
 
+  //PAGINATION
   if (page) {
     const from = (page - 1) * PAGE_SIZE;
     const to = from + PAGE_SIZE - 1;
