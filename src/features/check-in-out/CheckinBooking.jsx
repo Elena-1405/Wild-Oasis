@@ -15,7 +15,6 @@ import Checkbox from '../../ui/Checkbox';
 import { formatCurrency } from '../../utils/helpers';
 import { useCheckin } from './useCheckin';
 import { useSettings } from '../settings/useSettings';
-import { HiChartSquareBar } from 'react-icons/hi';
 
 const Box = styled.div`
   /* Box */
